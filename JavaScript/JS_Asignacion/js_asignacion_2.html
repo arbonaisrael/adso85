@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS html</title>
+</head>
+
+<body>
+    <h2>El operador "+="</h2>
+    <p id="demo1"></p>
+
+    <h2>El operador "-="</h2>
+    <p id="demo2"></p>
+
+    <h2>El operador "*="</h2>
+    <p id="demo3"></p>
+
+    <h2>El operador "/="</h2>
+    <p id="demo4"></p>
+
+    <script>
+        var sumCorta = 10;
+        var resCorta = 10;
+        var mulCorta = 10;
+        var divCorta = 10;
+
+        sumCorta += 5;
+        resCorta -= 2;
+        mulCorta *= 4;
+        divCorta /= 2;
+
+        document.getElementById("demo1").innerHTML = sumCorta;
+        document.getElementById("demo2").innerHTML = resCorta;
+        document.getElementById("demo3").innerHTML = mulCorta;
+        document.getElementById("demo4").innerHTML = divCorta;
+
+    </script>
+</body>
+</html>

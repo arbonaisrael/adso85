@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS html</title>
+</head>
+<body>
+    <h2> Crear string de objetos</h2>
+    <p>Los String y objetos no se puede comparar de forma segura</p>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        var cadena = "Juan";                        // variable es un String
+        var cadenaObjeto = new String("Juan");     // cadenaObjeto es un Obj
+
+        document.getElementById("demo").innerHTML = (cadena == cadenaObjeto);
+        document.getElementById("demo2").innerHTML = (cadena === cadenaObjeto);
+        document.getElementById("demo3").innerHTML = (cadenaObjeto.localeCompare(cadena));
+
+        
+    </script>
+    
+</body>
+</html>

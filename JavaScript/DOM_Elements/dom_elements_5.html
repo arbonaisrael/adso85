@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Elements 5</title>
+</head>
+<body>
+
+    <h2>Html elemento usando document.forms</h2>
+
+    <form id="frm1" action="?">
+        Primer Nombre: <input type="text" name="fnombre" value="Francisco">
+        <br>
+        Segundo Nombre: <input type="text" name="fsnombre" value="Jose">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <p>Al hacer click en ejecutar para mostrar los valores de cada elemento de formulario</p>
+    <button onclick="miFuncion()">ejecutar</button>
+    <p id="demo"></p>
+
+    <script>
+        function miFuncion() {
+            var formulario = document.forms["frm1"];
+            var datos = "";
+            var i;
+
+            for (i = 0; i < formulario.length; i++){
+                datos += formulario[i].value + "<br>";
+            }
+
+            document.getElementById("demo").innerHTML = datos;
+        }
+    </script>
+    
+</body>
+</html>

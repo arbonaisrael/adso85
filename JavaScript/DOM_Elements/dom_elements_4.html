@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Elements 4</title>
+</head>
+<body>
+    <h2>Html elemento by Query Selector</h2>
+
+    <p>Buenas noches</p>
+
+    <p class="intro">DOM es muy util</p>
+    <p class="intro">Ejemplo de demostración del <b>querySelectorAll</b> metodo.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var x = document.querySelectorAll("p.intro");
+        document.getElementById("demo").innerHTML =
+        "primer parrafo (index 0) dentro del 'principal' es: " + x[0].innerHTML;
+    </script>
+</body>
+</html>

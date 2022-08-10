@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Elements 3</title>
+</head>
+<body>
+    <h2>Html Elementos by Tag Name</h2>
+
+    <div id="main">
+        <p>el DOM es muy util.</p>
+        <p>Ejemplo de demostración <b>getElementByTagName</b>metodos</p>
+    </div>
+
+    <p id="demo"></p>
+
+    <script>
+        var x = document.getElementById("main");
+        var y = x.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML =
+        "primer parrafo (index 0) dentro del 'principal' es: " + y[1].innerHTML;
+    </script>
+    
+</body>
+</html>
