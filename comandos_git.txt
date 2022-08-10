@@ -1,0 +1,22 @@
+// listar credenciales globales
+git config --global --list
+
+
+// configuración de credenciales
+git config --global user.name
+git config --global user.password
+git config --global user.email
+
+
+// crear el repositorio en github
+
+git init
+git add .
+git commit -m 'comentarios de los cambios o inicio de proyecto'
+git remote add origin https://token_personal@https://github.com/arbonaisrael/adso85.git
+
+git push -u origin master
+
+
+
+
