@@ -1,0 +1,362 @@
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+
+            </button>
+            <a class="navbar-brand" href"#">Cardiovascular</a>
+
+        </div>
+
+        <p class="navbar-text pull-right" >
+            Conectado <a id="l_usu" class="navbar-link">
+            </a>
+        </p>
+
+        <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav">
+                <li><a id="ControlPanelUser" href="#usuarios" class="inf">Usuarios</a></li>
+                <li><a id="ControlPanelMedicamento" href="#medicamento" class="inf">Medicamentos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        Opciones <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a id="ControlPanelBarrio" href="#barrios" class="inf">Barrios</a></li>
+                        <li><a id="ControlPanelCiudad" href="#ciudad" class="inf">Ciudades</a></li>
+                    </ul>
+                </li>
+                <li><a id="CerrarSesion">Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="n_img" class="container">
+    <img src="img/fondo.jpg" class="img-responsive" alt="Cinque Terre">
+</div>
+
+<!-- -------------------------------------------------- USUARIOS ---------------------------------------------------- -->
+
+<div id="usuarios" class="container center-block oculto">
+    <div id="alertas_usuarios"> </div>
+
+    <h1 class="blue center title">Gestion y Control de Usuarios</h1>
+    <button class="btn btn-primary agregar" id="agregarUser">Nuevo Usuario <span
+            class="glyphicon glyphicon-plus"></span></button>
+
+    <div class="container">
+
+        <form class="form-horizontal hidden" id="EditarUser">
+            <div class="form-group">
+                <label for="edituser" class="col-sm-offset-3 col-sm-2 control-label">Usuario:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="edituser" placeholder="Usuario" required disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editpass" class="col-sm-offset-3 col-sm-2 control-label">Contraseña:</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="editpass" placeholder="Contrseña" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="editrol" class="col-sm-offset-3 col-sm-2 control-label">Rol:</label>
+                <div class="col-sm-4">
+                    <select id="editrol" class="form-control">
+                        <option value="2">Administrador</option>
+                        <option value="1">Super Adiministrador</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editesatdo" class="col-sm-offset-3 col-sm-2 control-label">Estado:</label>
+                <div class="col-sm-4">
+                    <select id="editestado" class="form-control">
+                        <option value="1">Activo</option>
+                        <option value="2">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarActualizarUser">Cancelar</button>
+                <button type="submit" class="btn btn-success">Actualizar</button>
+            </div>
+        </form>
+
+        <form class="form-horizontal hidden" id="CrearNuevoUser">
+            <div class="form-group">
+                <label for="user" class="col-sm-offset-3 col-sm-2 control-label">Usuario:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="user" placeholder="Usuario" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pass" class="col-sm-offset-3 col-sm-2 control-label">Contraseña:</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="pass" placeholder="Contrseña" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="rol" class="col-sm-offset-3 col-sm-2 control-label">Rol:</label>
+                <div class="col-sm-4">
+                    <select id="rol" class="form-control">
+                        <option value="2">Administrador</option>
+                        <option value="1">Super Adiministrador</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="esatdo" class="col-sm-offset-3 col-sm-2 control-label">Estado:</label>
+                <div class="col-sm-4">
+                    <select id="estado" class="form-control">
+                        <option value="1">Activo</option>
+                        <option value="2">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarCrearUser">Cancelar</button>
+                <button type="submit" class="btn btn-success">Crear</button>
+            </div>
+        </form>
+    </div>
+    <div class="table-responsive">
+        <table id="usuarios_table" class="table table-hover">
+            <thead>
+                <tr class="blue">
+                    <td>Usuario</td>
+                    <td>Rol</td>
+                    <td>Estado</td>
+                    <td>Editar</td>
+                </tr>
+            </thead>
+            <tbody id="tb_users">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- -------------------------------------------------- BARRIOS ---------------------------------------------------- -->
+
+<div id="barrios" class="container center-block oculto">
+    <div id="alertas_barrios"> </div>
+
+    <h1 class="blue center title">Gestion y Control de Barrios</h1>
+    <button class="btn btn-primary agregar" id="agregarBarrio">Nuevo Barrio <span
+            class="glyphicon glyphicon-plus"></span></button>
+
+    <div class="container">
+
+        <form class="form-horizontal hidden" id="EditarBarrio">
+
+            <div class="form-group">
+                <label for="editbarrio" class="col-sm-offset-3 col-sm-2 control-label">Barrio:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="editbarrio" placeholder="Id Barrio" required disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editnombre" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="editnombre" placeholder="Nombre" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarActualizarBarrio">Cancelar</button>
+                <button type="submit" class="btn btn-success">Actualizar</button>
+            </div>
+        </form>
+
+        <form class="form-horizontal hidden" id="CrearNuevoBarrio">
+
+            <div class="form-group">
+                <label for="nombre" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarCrearBarrio">Cancelar</button>
+                <button type="submit" class="btn btn-success">Crear</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive">
+        <table id="barrio_table" class="table table-hover">
+            <thead>
+                <tr class="blue">
+                    <td>Barrio</td>
+                    <td>Nombre</td>
+                    <td>Editar</td>
+                </tr>
+            </thead>
+            <tbody id="Barrios_detalle">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- -------------------------------------------------- CIUDADES ---------------------------------------------------- -->
+
+<div id="ciudad" class="container center-block oculto">
+    <div id="alertas_ciudades"> </div>
+
+    <h1 class="blue center title">Gestion y Control de Ciudades</h1>
+    <button class="btn btn-primary agregar" id="agregarCiudad">Nueva Ciudad <span
+            class="glyphicon glyphicon-plus"></span></button>
+
+    <div class="container">
+
+        <form class="form-horizontal hidden" id="EditarCiudad">
+
+            <div class="form-group">
+                <label for="editciudad" class="col-sm-offset-3 col-sm-2 control-label">Ciudad:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="editciudad" placeholder="Id Ciudad" required disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editnomciu" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="editnomciu" placeholder="Nombre">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarActualizarCiudad">Cancelar</button>
+                <button type="submit" class="btn btn-success">Actualizar</button>
+            </div>
+        </form>
+
+        <form class="form-horizontal hidden" id="CrearNuevoCiudad">
+
+            <div class="form-group">
+                <label for="ciu" class="col-sm-offset-3 col-sm-2 control-label">Ciudad:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="ciu" placeholder="Id Ciudad" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nom" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="nom" placeholder="Nombre" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarCrearCiudad">Cancelar</button>
+                <button type="submit" class="btn btn-success">Crear</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive">
+        <table id="ciudad_table" class="table table-hover">
+            <thead>
+                <tr class="blue">
+                    <td>Ciudad</td>
+                    <td>Nombre</td>
+                    <td>Editar</td>
+                </tr>
+            </thead>
+            <tbody id="Ciudades_detalle">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- -------------------------------------------------- MEDICAMENTOS ---------------------------------------------------- -->
+
+<div id="medicamento" class="container center-block oculto">
+    <div id="alertas_medicamentos"> </div>
+
+    <h1 class="blue center title">Gestion y Control de Medicamentos</h1>
+    <button class="btn btn-primary agregar" id="agregarMedicamento">Nuevo Medicamento<span
+            class="glyphicon glyphicon-plus"></span></button>
+
+    <div class="container">
+
+        <form class="form-horizontal hidden" id="EditarMedicamento">
+
+            <div class="form-group">
+                <label for="editmedicamento" class="col-sm-offset-3 col-sm-2 control-label">Medicamento:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="editmedicamento" placeholder="Id Medicamento" required
+                        disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editnommed" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="editnommed" placeholder="Nombre">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarActualizarMedicamento">Cancelar</button>
+                <button type="submit" class="btn btn-success">Actualizar</button>
+            </div>
+        </form>
+
+        <form class="form-horizontal hidden" id="CrearNuevoMedicamento">
+
+            <div class="form-group">
+                <label for="id_medicamento" class="col-sm-offset-3 col-sm-2 control-label">Medicamento:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="id_medicamento" placeholder="Id Medicamento" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nommedicamento" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="nommedicamento" placeholder="Nombre" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default" id="CancelarCrearMedicamento">Cancelar</button>
+                <button type="submit" class="btn btn-success">Crear</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive">
+        <table id="medicamento_table" class="table table-hover">
+            <thead>
+                <tr class="blue">
+                    <td>Medicamento</td>
+                    <td>Nombre</td>
+                    <td>Editar</td>
+                </tr>
+            </thead>
+            <tbody id="Medicamentos_detalle">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="js/PaneldeControl.js"></script>
+<script src="js/PaneldeControlUsers.js"></script>
+<script src="js/PaneldeControlBarrios.js"></script>
+<script src="js/PaneldeControlCiudades.js"></script>
+<script src="js/PaneldeControlMedicamentos.js"></script>

@@ -1,0 +1,119 @@
+html body{
+	height: 100%;
+}
+
+body{
+	background-color: #EFEDED;
+}
+.inicioSesion{
+	width: 50%;
+	margin: auto;
+	padding: 20px;
+	padding-bottom: 100px;
+	margin-top: 100px;	 
+}
+
+.inicioSesion h1 {
+	text-align: center;
+	font-size: 20px;
+	color: #4C7CC5;
+}
+
+.card{
+	border-radius: 0;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 2px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 6px 5px 0px rgba(0,0,0,0.75);
+}
+
+.ControlPanel{
+	margin:0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #FFF;
+	list-style: none;
+
+}
+.ControlPanel h3{
+	color: #4F83D8;
+	text-align: center;
+}
+.ControlPanel li{
+	width: 100%;
+	font-size: 18px;
+	background: #4F83D8;
+	color: #FFF;
+	padding: 8px 15px;
+	margin: 5px 0px;
+
+	cursor: pointer;
+}
+
+#contenido_control_panel{
+	padding-top: 30px;
+}
+
+.blue{
+	background: #4F83D8;
+	color:#FFF;
+}
+.center{
+	text-align: center;
+}
+.title{
+	padding: 10px;
+	font-size: 25px;
+}
+
+/*
+thead tr td{
+	text-align: center;
+	border-right: solid 1px #E1E1E1; 
+}
+thead tr td:last-child{
+	border-right: none; 
+}
+
+tbody tr td{
+	text-align: left;
+	border-right: solid 1px #E1E1E1;
+	font-size: 10px; 
+}
+tbody tr td:last-child{
+	border-right: none; 
+}
+
+*/
+
+
+.agregar{
+	margin-bottom: 8px;
+	font-size: 15px;	
+}
+
+.white{
+	background-color: white;
+}
+
+label{
+	text-align: left !important;
+}
+
+.edit{
+	cursor: pointer;
+}
+
+#n_img {
+width: 96%;
+max-width: 960px;
+margin: 0 auto;
+}
+
+img {
+width: 100%;
+height: auto;
+}

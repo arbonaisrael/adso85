@@ -1,0 +1,194 @@
+<nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                    &nbsp;
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li><a data-toggle="modal" data-target="#popuplogin">login</a></li>
+                        <li><a data-toggle="modal" data-target="#popupregistrar">Registrar</a></li>
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
+
+<div class="container">
+
+<div id="n_img" class="container">
+  <img src="img/fondo.jpg" class="img-responsive" alt="Cinque Terre" >
+</div>
+
+<!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Cardiovascular!</h1>
+        <p class="lead">"Los conceptos de prevención primaria y secundaria deben ser los que normen, orienten y dirijan la práctica médica diaria. Se hace prevención primaria al investigar, detectar y manejar de manera oportuna y eficaz uno o más de los marcadores o factores de riesgo que amenazan la salud cardio-vascular de cualquier individuo, para impedir o retrasar su evolución a situaciones de daño orgánico."
+       </p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Empieza hoy</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-3">
+          <h2>Hipertension Arterial</h2>
+          <p class="text-danger">La hipertensión arterial es una enfermedad silenciosa y lentamente progresiva que se presenta en todas las edades con énfasis en personas entre 30 y 50 años, generalmente asintomática, que después de 10 o 20 años ocasiona daños significativos en órganos blancos.
+          </p>
+          <P class="text-justify">
+            La hipertensión arterial se define como el nivel de presión arterial sistólica (PAS) mayor o igual a 140 mm Hg, o como el nivel de presión arterial diastólica (PAD) mayor o igual a 90 mm Hg.
+
+            Cuando la presión arterial sistólica (PAS) es igual o mayor a 160 mmHg, generalmente en personas mayores de 60 años, se considera hipertensión sistólica y es un factor de riesgo para enfermedad cardiocerebrovascular.
+          </P>
+          <p><a class="btn btn-primary" href="#" role="button">Ver Detalles &raquo;</a></p>
+        </div>
+        
+        <div class="col-lg-3">
+          <h2>Hiperlipidemia</h2>
+          <p class="text-danger">Es un trastorno hereditario que provoca niveles de colesterol y triglicéridos altos en la sangre.</p>
+          <p class="text-justify">
+            Los factores de riesgo de la hiperlipidemia combinada familiar es el trastorno genético más común que aumenta las grasas en la sangre y puede causar ataques cardíacos precoces.
+            • Antecedentes Familiares de Colesterol alto.
+            • Artropatía coronaria temprana.
+
+          </p>
+          <p><a class="btn btn-primary" href="#" role="button">Ver Detalles &raquo;</a></p>
+        </div>
+        
+
+        <div class="col-lg-3">
+          <h2>Obesidad</h2>
+          <p class="text-danger">Es la Acumulación excesiva de grasa en el cuerpo.
+          </p>
+          <p class="text-justify">
+            ¿Qué son el sobrepeso y la obesidad?
+            El sobrepeso y la obesidad se definen como una acumulación anormal o excesiva de grasa que puede ser perjudicial para la salud.
+
+            El índice de masa corporal (IMC) es un indicador simple de la relación entre el peso y la talla que se utiliza frecuentemente para identificar el sobrepeso y la obesidad en los adultos. 
+            Índice de Masa Corporal: Se calcula dividiendo el peso de una persona en kilos por el cuadrado de su talla en metros (kg/m2).
+          </p>
+
+          <p><a class="btn btn-primary" href="#" role="button">Ver Detalles &raquo;</a></p>
+        </div>
+        
+        <div class="col-lg-3">
+          <h2>Diabetes</h2>
+          <p class="text-danger">Enfermedad crónica en la cual el cuerpo no puede regular la cantidad de azúcar en la sangre.
+          </p>
+          <p>
+           Diabetes tipo 1: Puede ocurrir a cualquier edad, pero se diagnostica con mayor frecuencia en niños, adolescentes o adultos jóvenes. En esta enfermedad, el cuerpo no produce o produce poca insulina
+
+           Diabetes tipo 2: Es mucho más común. Generalmente se presenta en la edad adulta pero, debido a las tasas altas de obesidad, ahora se está diagnosticando en niños y adolescentes. 
+ 
+          </p>
+          <p><a class="btn btn-primary" href="#" role="button">Ver Detalles &raquo;</a></p>
+        </div>
+
+      </div>
+
+       <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; 2016 Sena, Centro Agroturistico.</p>
+      </footer>
+
+  </div>
+
+
+
+<div class="modal fade" id="popuplogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+        <h4 class="modal-title" id="myModalLabel">App Cardio Inicio de Sesion</h4>
+      </div>
+      
+      <div id="loginUsuario" class="modal-body">
+        <div id="alertas"></div>
+        <form role="form">
+          <div class="form-group">  
+            <label for="usuario">Nombre del usuario</label>
+            <div class="input-group">
+              <input type="text" class="form-control" name="username" id="luser" placeholder="Usuario" required><span class="input-group-addon glyphicon glyphicon-user"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pass">Contraseña</label>
+            <div class="input-group">
+              <input type="password" class="form-control" name="clave" id="lpass" placeholder="Contraseña" required><span class="input-group-addon glyphicon glyphicon-tag"></span>
+              </div>
+          </div>
+        </form>  
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" id="IniciarSesion">Ingresar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="popupregistrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+        <h4 class="modal-title" id="myModalLabel">App Cardio Registro</h4>
+      </div>
+      
+      <div id="nuevaUsuario" class="modal-body">
+        <div id="alertass"></div>
+        <form role="form">
+          <div class="form-group">  
+            <label for="user">Usuario</label>
+            <input type="text" class="form-control" id="nuser" placeholder="Usuario" required>
+          </div>
+          <div class="form-group">
+            <label for="passs">Contraseña</label>
+            <input type="password" class="form-control" id="npass" placeholder="Contraseña" required>
+          </div>
+
+          <div class="form-group">
+            <label for="rol">Rol:</label>
+            <select id="rol" class="btn btn-block btn-default">
+              <option value="2">Usuario</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <select id="estado" class="btn btn-block btn-default">
+              <option value="1">Activo</option>
+            </select>
+          </div>
+      
+        </form>  
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" id="CrearNuevoUser">Crear</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/InicioSesion.js"></script>
