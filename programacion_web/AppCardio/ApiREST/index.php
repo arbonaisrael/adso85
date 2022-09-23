@@ -5,7 +5,10 @@
     */
 
     require_once 'Controladores/UsuariosCtrl.php';
-
+    require_once 'Controladores/BarriosCtrl.php';
+    require_once 'Controladores/CiudadesCtrl.php';
+    require_once 'Controladores/MedicamentosCtrl.php';
+    require_once 'Controladores/PacientesCtrl.php';
 
     
     /*
@@ -26,7 +29,11 @@
         $recurso = array_shift($peticion); // obtener el recurso a solicitar
 
         $recursos_existentes = array(
-            'UsuariosCtrl'
+            'UsuariosCtrl',
+            'BarriosCtrl',
+            'CiudadesCtrl',
+            'MedicamentosCtrl',
+            'PacientesCtrl'
         ); // Definimos los recursos existentes y validamos que la solicitud exista
 
         if (in_array($recurso, $recursos_existentes)){
@@ -37,6 +44,18 @@
                 switch($recurso){
                     case 'UsuariosCtrl':
                         $instancia = new UsuariosCtrl($peticion);
+                        break;
+                    case 'BarriosCtrl':
+                        $instancia = new BarriosCtrl($peticion);
+                        break;
+                    case 'CiudadesCtrl':
+                        $instancia = new CiudadesCtrl($peticion);
+                        break;
+                    case 'MedicamentosCtrl':
+                        $instancia = new MedicamentosCtrl($peticion);
+                        break;
+                    case 'PacientesCtrl':
+                        $instancia = new PacientesCtrl($peticion);
                         break;
                 }
 

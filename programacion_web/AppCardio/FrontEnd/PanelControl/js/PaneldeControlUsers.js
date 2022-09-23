@@ -3,7 +3,7 @@ function listarUsers(){
     {datos: null},
     function(data){
         if(data.Estado == 1){
-            $('#tb_users').html('');
+            $('#usuarios_detalles').html('');
             Usuarios = data.Usuarios;
             $.each(Usuarios,function(index,val){
                 cade = '';
@@ -23,7 +23,7 @@ function listarUsers(){
                  cade += '<td class="edit" onclick="EditarUser('+index+')"><center><span class="glyphicon glyphicon-pencil"></span></center></td>';
                 cade +='</tr>';
 					
-                $('#tb_users').append(cade);
+                $('#usuarios_detalles').append(cade);
             });
         }
     });

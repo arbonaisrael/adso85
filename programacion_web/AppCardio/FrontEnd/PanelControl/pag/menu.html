@@ -25,14 +25,15 @@
 
             <ul class="nav navbar-nav">
                 <li><a id="ControlPanelUser" href="#usuarios" class="inf">Usuarios</a></li>
-                <li><a id="ControlPanelMedicamento" href="#medicamento" class="inf">Medicamentos</a></li>
+                <li><a id="ControlPanelPaciente" href="#pacientes" class="inf">Pacientes</a></li>
+                <li><a id="ControlPanelMedicamento" href="#medicamentos" class="inf">Medicamentos</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">
                         Opciones <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a id="ControlPanelBarrio" href="#barrios" class="inf">Barrios</a></li>
-                        <li><a id="ControlPanelCiudad" href="#ciudad" class="inf">Ciudades</a></li>
+                        <li><a id="ControlPanelCiudad" href="#ciudades" class="inf">Ciudades</a></li>
                     </ul>
                 </li>
                 <li><a id="CerrarSesion">Salir</a></li>
@@ -134,7 +135,7 @@
         </form>
     </div>
     <div class="table-responsive">
-        <table id="usuarios_table" class="table table-hover">
+        <table id="tb_usuarios" class="table table-hover">
             <thead>
                 <tr class="blue">
                     <td>Usuario</td>
@@ -143,7 +144,7 @@
                     <td>Editar</td>
                 </tr>
             </thead>
-            <tbody id="tb_users">
+            <tbody id="usuarios_detalles">
             </tbody>
         </table>
     </div>
@@ -198,7 +199,7 @@
     </div>
 
     <div class="table-responsive">
-        <table id="barrio_table" class="table table-hover">
+        <table id="tb_barrios" class="table table-hover">
             <thead>
                 <tr class="blue">
                     <td>Barrio</td>
@@ -206,7 +207,7 @@
                     <td>Editar</td>
                 </tr>
             </thead>
-            <tbody id="Barrios_detalle">
+            <tbody id="barrios_detalles">
             </tbody>
         </table>
     </div>
@@ -214,7 +215,7 @@
 
 <!-- -------------------------------------------------- CIUDADES ---------------------------------------------------- -->
 
-<div id="ciudad" class="container center-block oculto">
+<div id="ciudades" class="container center-block oculto">
     <div id="alertas_ciudades"> </div>
 
     <h1 class="blue center title">Gestion y Control de Ciudades</h1>
@@ -268,7 +269,7 @@
     </div>
 
     <div class="table-responsive">
-        <table id="ciudad_table" class="table table-hover">
+        <table id="tb_ciudades" class="table table-hover">
             <thead>
                 <tr class="blue">
                     <td>Ciudad</td>
@@ -276,7 +277,7 @@
                     <td>Editar</td>
                 </tr>
             </thead>
-            <tbody id="Ciudades_detalle">
+            <tbody id="ciudades_detalles">
             </tbody>
         </table>
     </div>
@@ -285,7 +286,7 @@
 
 <!-- -------------------------------------------------- MEDICAMENTOS ---------------------------------------------------- -->
 
-<div id="medicamento" class="container center-block oculto">
+<div id="medicamentos" class="container center-block oculto">
     <div id="alertas_medicamentos"> </div>
 
     <h1 class="blue center title">Gestion y Control de Medicamentos</h1>
@@ -340,7 +341,7 @@
     </div>
 
     <div class="table-responsive">
-        <table id="medicamento_table" class="table table-hover">
+        <table id="tb_medicamentos" class="table table-hover">
             <thead>
                 <tr class="blue">
                     <td>Medicamento</td>
@@ -348,11 +349,271 @@
                     <td>Editar</td>
                 </tr>
             </thead>
-            <tbody id="Medicamentos_detalle">
+            <tbody id="medicamentos_detalles">
             </tbody>
         </table>
     </div>
 </div>
+
+
+
+<!-- -------------------------------------------------- PACIENTES ---------------------------------------------------- -->
+
+
+<div id="pacientes" class="container center-block oculto">
+    <div id="alertas_pacientes"> </div>
+    
+    <h1 class="blue center title">Gestion y Control de Pacientes</h1>
+    <button class="btn btn-primary agregar" id="agregarPaciente">Nuevo Paciente <span class="glyphicon glyphicon-plus"></span></button>
+    
+
+    <div class="container">     
+      <form class="form-horizontal hidden" id="CrearNuevoPaciente">
+        
+        <div class="form-group">
+          <label for="npcedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="npcedula" placeholder="Documento" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="npnombres" class="col-sm-offset-3 col-sm-2 control-label">Nombres:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="npnombres" placeholder="Nombres" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="npapellidos" class="col-sm-offset-3 col-sm-2 control-label">Apellidos:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="npapellidos" placeholder="Apellidos" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="npfec_nac" class="col-sm-offset-3 col-sm-2 control-label">Fec Nacimiento:</label>
+            <div class="col-sm-4">
+               <div class="input-group date">               
+                   <input type="text" class="form-control" id="npfec_nac" placeholder="Fec Nacimiento" required>
+                   <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+               </div>  
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="npedad" class="col-sm-offset-3 col-sm-2 control-label">Edad:</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control" id="npedad" placeholder="Edad" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="npgenero" class="col-sm-offset-3 col-sm-2 control-label">Genero:</label>
+          <div class="col-sm-4">
+            <select id="npgenero" class="form-control">
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nptelefono" class="col-sm-offset-3 col-sm-2 control-label">Telefono:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="nptelefono" placeholder="Telefono" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="npdireccion" class="col-sm-offset-3 col-sm-2 control-label">Direccion:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="npdireccion" placeholder="Direccion" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="npbarrio" class="col-sm-offset-3 col-sm-2 control-label">Barrio:</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="npbarrio">
+              <option value="">Default</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="npciudad" class="col-sm-offset-3 col-sm-2 control-label">ciudad:</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="npciudad">
+              <option value="">Default</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nptp_paciente" class="col-sm-offset-3 col-sm-2 control-label">Tipo Paciente:</label>
+          <div class="col-sm-4">
+            <select id="nptp_paciente" class="form-control">
+              <option value="S">Subsidio</option>
+              <option value="C">Contributivo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="npseguridad_social" class="col-sm-offset-3 col-sm-2 control-label">Seguridad Social:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="npseguridad_social" placeholder="Seguridad Social" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-default" id="CancelarCrearPaciente">Cancelar</button>
+            <button type="submit" class="btn btn-success" >Crear</button>        
+        </div>
+      </form>
+    </div>
+
+    <div class="container">     
+      <form class="form-horizontal hidden" id="EditarPaciente">
+        
+        <div class="form-group">
+          <label for="epcedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="epcedula" placeholder="Documento" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="epnombres" class="col-sm-offset-3 col-sm-2 control-label">Nombres:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="epnombres" placeholder="Nombres" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="epapellidos" class="col-sm-offset-3 col-sm-2 control-label">Apellidos:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="epapellidos" placeholder="Apellidos" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="epfec_nac" class="col-sm-offset-3 col-sm-2 control-label">Fec Nacimiento:</label>
+            <div class="col-sm-4">
+               <div class="input-group date" id="datetimepicker1">               
+                   <input type="text" class="form-control" id="epfec_nac" placeholder="Fec Nacimiento" required>
+                   <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+               </div>  
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="epedad" class="col-sm-offset-3 col-sm-2 control-label">Edad:</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control" id="epedad" placeholder="Edad" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="epgenero" class="col-sm-offset-3 col-sm-2 control-label">Genero:</label>
+          <div class="col-sm-4">
+            <select id="epgenero" class="form-control">
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="eptelefono" class="col-sm-offset-3 col-sm-2 control-label">Telefono:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="eptelefono" placeholder="Telefono" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="epdireccion" class="col-sm-offset-3 col-sm-2 control-label">Direccion:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="epdireccion" placeholder="Direccion" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="epbarrio" class="col-sm-offset-3 col-sm-2 control-label">Barrio:</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="epbarrio">
+              <option value="">Default</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="epciudad" class="col-sm-offset-3 col-sm-2 control-label">ciudad:</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="epciudad">
+              <option value="">Default</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="eptp_paciente" class="col-sm-offset-3 col-sm-2 control-label">Tipo Paciente:</label>
+          <div class="col-sm-4">
+            <select id="eptp_paciente" class="form-control">
+              <option value="S">Subsidio</option>
+              <option value="C">Contributivo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="epseguridad_social" class="col-sm-offset-3 col-sm-2 control-label">Seguridad Social:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="epseguridad_social" placeholder="Seguridad Social" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-default" id="CancelarActualizarPaciente">Cancelar</button>
+            <button type="submit" class="btn btn-success" >Actualizar</button>        
+        </div>
+
+      </form>
+
+    </div>
+
+     <div class="row">   
+    
+          <div class="table-responsive">
+            <table id="tb_pacientes" class="table table-hover">        
+              <thead>
+                <tr class="blue">
+                  <td>Documento</td>
+                  <td>Nombres</td>
+                  <td>Apellidos</td>
+                  <td>Fec. Nac.</td>
+                  <td>Edad</td>
+                  <td>Genero</td>
+                  <td>Telefono</td>
+                  <td>Direccion</td>
+                  <td>Barrio</td>
+                  <td>Ciudad</td>
+                  <td>Tp Paciente</td>                
+                  <td>Seg. Social</td>
+                  <td>Editar</td>
+                </tr>
+              </thead>
+              <tbody id="pacientes_detalles">
+              </tbody>
+            </table>
+          </div>
+
+  </div>
+
+  
+</div>
+
 
 
 <script src="js/PaneldeControl.js"></script>
@@ -360,3 +621,4 @@
 <script src="js/PaneldeControlBarrios.js"></script>
 <script src="js/PaneldeControlCiudades.js"></script>
 <script src="js/PaneldeControlMedicamentos.js"></script>
+<script src="js/PaneldeControlPacientes.js"></script>
