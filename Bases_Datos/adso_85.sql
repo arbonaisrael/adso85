@@ -10,10 +10,28 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2022-09-28 09:31:19
+Date: 2022-10-04 20:37:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `auditor`
+-- ----------------------------
+DROP TABLE IF EXISTS `auditor`;
+CREATE TABLE `auditor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_tabla` varchar(50) DEFAULT NULL,
+  `tp_tran` varchar(50) DEFAULT NULL,
+  `fecha` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of auditor
+-- ----------------------------
+INSERT INTO `auditor` VALUES ('1', 'pr_tabla', 'Eliminar Registro', '2022-10-04 20:34:33');
+INSERT INTO `auditor` VALUES ('2', 'pr_tabla', 'Actulizar Registro', '2022-10-04 20:35:54');
 
 -- ----------------------------
 -- Table structure for `ciudades`
@@ -1220,20 +1238,23 @@ INSERT INTO `paises` VALUES ('5', 'PANAMA', 'PA');
 -- ----------------------------
 DROP TABLE IF EXISTS `pr_tabla`;
 CREATE TABLE `pr_tabla` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `nombre` varchar(80) DEFAULT NULL,
-  `pr_apellido` varchar(100) DEFAULT NULL,
-  `sg_apellido` varchar(100) DEFAULT NULL,
+  `pr_apellido` varchar(80) DEFAULT '',
+  `sg_apellido` varchar(80) DEFAULT '',
   `estado` smallint(6) DEFAULT NULL,
+  `nom_completo` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of pr_tabla
 -- ----------------------------
-INSERT INTO `pr_tabla` VALUES ('1', 'Andres', 'Diaz', 'Lara', '1');
-INSERT INTO `pr_tabla` VALUES ('2', 'Maria', 'Lopez', 'Muñoz', '1');
-INSERT INTO `pr_tabla` VALUES ('3', 'Andres', 'Lopez', 'Diaz', '1');
+INSERT INTO `pr_tabla` VALUES ('1', 'Andres', 'Diaz', 'Lara.', '1', 'Andres -- Diaz -- Lara.');
+INSERT INTO `pr_tabla` VALUES ('2', 'Maria', 'Lopez', 'Muñoz', '1', 'Maria -- Lopez -- Muñoz');
+INSERT INTO `pr_tabla` VALUES ('3', 'Andres', 'Lopez', 'Diaz', '1', 'Andres -- Lopez -- Diaz');
+INSERT INTO `pr_tabla` VALUES ('4', 'Maikcol', 'Guevara', 'Fernandez', '1', 'Maikcol -- Guevara -- Fernandez');
+INSERT INTO `pr_tabla` VALUES ('5', 'Antonio', 'Santos', 'Lara.', '1', 'Antonio -- Santos -- Lara.');
 
 -- ----------------------------
 -- Table structure for `usuarios`
@@ -1249,3 +1270,42 @@ CREATE TABLE `usuarios` (
 -- Records of usuarios
 -- ----------------------------
 INSERT INTO `usuarios` VALUES ('admin', 'admin');
+DROP TRIGGER IF EXISTS `tr_pr_tabla_insertar`;
+DELIMITER ;;
+CREATE TRIGGER `tr_pr_tabla_insertar` BEFORE INSERT ON `pr_tabla` FOR EACH ROW BEGIN
+
+  DECLARE id_mayor INT DEFAULT 0;
+
+  -- SELECT id INTO id_mayor FROM pr_tabla ORDER BY ID DESC LIMIT 1;
+
+  SELECT MAX(id) INTO id_mayor FROM pr_tabla;
+
+  SET new.id = id_mayor + 1;
+
+  SET new.nom_completo = concat(new.nombre," -- ", new.pr_apellido, " -- ", new.sg_apellido);
+
+  INSERT INTO auditor (nom_tabla,tp_tran,fecha) VALUES ("pr_tabla","Insertar Registro",NOW());
+
+
+END
+;;
+DELIMITER ;
+DROP TRIGGER IF EXISTS `tr_pr_tabla_actulizar`;
+DELIMITER ;;
+CREATE TRIGGER `tr_pr_tabla_actulizar` BEFORE UPDATE ON `pr_tabla` FOR EACH ROW begin
+  SET new.nom_completo = concat(new.nombre," -- ", new.pr_apellido, " -- ", new.sg_apellido);
+
+  INSERT INTO auditor (nom_tabla,tp_tran,fecha) VALUES ("pr_tabla","Actulizar Registro",NOW());
+
+end
+;;
+DELIMITER ;
+DROP TRIGGER IF EXISTS `tr_pr_tabla_eliminar`;
+DELIMITER ;;
+CREATE TRIGGER `tr_pr_tabla_eliminar` AFTER DELETE ON `pr_tabla` FOR EACH ROW BEGIN
+  
+  INSERT INTO auditor (nom_tabla,tp_tran,fecha) VALUES ("pr_tabla","Eliminar Registro",NOW());
+
+END
+;;
+DELIMITER ;

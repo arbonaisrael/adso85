@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">adso85_lite</string>
+
+    <string name="main_b">Bienvenida</string>
+
+
+
+    <!-- String actividad login -->
+
+    <string name="txtLogin">Login</string>
+    <string name="txtUsuario">Usuario</string>
+    <string name="eLogin">Digite Login</string>
+    <string name="txtContrasena">Contraseña</string>
+    <string name="eContra">Digite Contraseña</string>
+    <string name="btnLogiar">Iniciar Sesión</string>
+    <string name="txtRegistro">Crear Usuario!</string>
+
+</resources>
