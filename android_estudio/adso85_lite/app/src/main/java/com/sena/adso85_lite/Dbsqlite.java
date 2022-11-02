@@ -1,5 +1,6 @@
 package com.sena.adso85_lite;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -81,5 +82,18 @@ public class Dbsqlite extends SQLiteOpenHelper {
 
         return usuarioList;
 
+    }
+
+    public void insertUsuario(CtrlUsuario ctrlUsuario){
+        ContentValues values = new ContentValues();
+        values.put("login",ctrlUsuario.getLogin());
+        values.put("contrasena",ctrlUsuario.getContrasena());
+        values.put("fec_creacion",ctrlUsuario.getFec_creacion());
+        values.put("estado",ctrlUsuario.getEstado());
+        values.put("rol",ctrlUsuario.getRol());
+
+        SQLiteDatabase base = this.getWritableDatabase();
+        base.insert("usuarios",null,values);
+        base.close();
     }
 }

@@ -2,6 +2,7 @@ package com.sena.adso85_lite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -72,4 +73,8 @@ public class Login extends AppCompatActivity {
     }
 
 
+    public void btnRegistroUsuario(View view) {
+        Intent ir = new Intent(this,RegistroUsuario.class);
+        startActivity(ir);
+    }
 }

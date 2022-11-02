@@ -4,7 +4,6 @@
     <string name="main_b">Bienvenida</string>
 
 
-
     <!-- String actividad login -->
 
     <string name="txtLogin">Login</string>
@@ -14,5 +13,36 @@
     <string name="eContra">Digite Contraseña</string>
     <string name="btnLogiar">Iniciar Sesión</string>
     <string name="txtRegistro">Crear Usuario!</string>
+
+
+    <!-- String actividad registro_usuario -->
+
+    <string name="txtRegistroUsuario">Registro</string>
+
+    <string-array name="rs_estado">
+        <item>
+            Sin Estado
+        </item>
+        <item>
+            Activo
+        </item>
+        <item>
+            Inactivo
+        </item>
+    </string-array>
+
+    <string-array name="rs_rol">
+        <item>
+            Sin rol
+        </item>
+        <item>
+            Administrador
+        </item>
+        <item>
+            Usuario
+        </item>
+    </string-array>
+
+
 
 </resources>
