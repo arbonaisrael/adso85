@@ -19,6 +19,8 @@
 
     <string name="txtRegistroUsuario">Registro</string>
 
+    <string name="txtMenu">Lista Usuarios</string>
+
     <string-array name="rs_estado">
         <item>
             Sin Estado
@@ -30,6 +32,8 @@
             Inactivo
         </item>
     </string-array>
+
+    <!-- String actividad menu -->
 
     <string-array name="rs_rol">
         <item>
@@ -44,5 +48,7 @@
     </string-array>
 
 
+    <!-- String actividad Lista Usuarios -->
+    <string name="lstBtnCrearUsuarios">Crear Usuario</string>
 
 </resources>

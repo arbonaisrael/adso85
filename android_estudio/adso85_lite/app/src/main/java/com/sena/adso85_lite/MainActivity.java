@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.sena.adso85_lite.actividades.Login;
+
 public class MainActivity extends AppCompatActivity {
 
     private int contar;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mainIngresar(View view) {
-        Intent ir = new Intent(this,Login.class);
+        Intent ir = new Intent(this, Login.class);
         startActivity(ir);
     }
 }
