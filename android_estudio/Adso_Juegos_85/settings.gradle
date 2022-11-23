@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Adso_Juegos_85"

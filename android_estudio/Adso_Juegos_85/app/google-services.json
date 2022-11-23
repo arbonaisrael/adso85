@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "777818339536",
+    "project_id": "adsojuegos85",
+    "storage_bucket": "adsojuegos85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777818339536:android:16ce43f65ba67bfb0446d5",
+        "android_client_info": {
+          "package_name": "com.sena.adso_juegos_85"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777818339536-8mu9gd0u35vm6oapcaf2p20o2nnn6l60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sena.adso_juegos_85",
+            "certificate_hash": "462b099c2d6deb974c9ed3b207abe0f3cf599fbe"
+          }
+        },
+        {
+          "client_id": "777818339536-mpvg0u8t0h6iqo2p22o49dses9j6ptva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJrNF4AmTb_Sq5L6Nrjx5k_ZXdE35CeCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777818339536-mpvg0u8t0h6iqo2p22o49dses9j6ptva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
