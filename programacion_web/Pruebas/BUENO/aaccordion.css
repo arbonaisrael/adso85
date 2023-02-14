@@ -1,0 +1,173 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+
+/*--Start Accordion Container--*/
+#accordion {
+	max-width: 457px;
+	margin: 0 auto;
+	text-align: left;
+}
+.panel {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	border-bottom: 1px solid #666666;
+}
+.panel-group .panel {
+	border-radius: 0px;
+}
+.panel-title {
+	font-size: 15px;
+}
+.panel-heading {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	padding: 15px;
+}
+.panel-heading .accordion-toggle:after {
+    content: "\2212";
+	font-size: 20px;
+	font-weight: normal;
+    float: right;
+	margin-top: -2px;
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    content: "\002B";
+	font-size: 20px;
+	font-weight: normal;
+}
+.panel-default>.panel-heading {
+	background-color: #1d1d1d;
+}
+.panel-group .panel+.panel {
+	margin-top: 0;
+}
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+	border-top: none;
+	background-color: #1d1d1d;
+	color: #cccccc;
+}
+.panel-default>.panel-heading a:link {
+	font-weight: bold;
+	color: #cccccc;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+}
+.panel-body {
+	padding: 25px;
+	padding-top: 0;
+}
+.panel-body p {
+	font-weight: normal;
+	font-size: 0.875em;
+	letter-spacing: 0.05em;
+}
+
+.panel-body a {
+	font-size: 0.725em;
+	letter-spacing: 1px;
+	border-bottom: 1px solid;
+	font-style: italic;
+}
+
+/*--You can remove everything after this comment--*/
+body {
+	font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    text-align: center;
+    color: #6D797F;
+    font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	border: none;
+}
+
+h1 {
+	font-size: 4em;
+	font-weight: 600;
+	letter-spacing: -0.025em;
+	color: #FFCC00;
+	margin-top: 0;
+}
+
+p {
+	font-size: 1em;
+	font-weight:600;
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+.small {
+	padding: 0 20px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #FFCC00;
+	transition: all .3s ease;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 30px;
+	background: #FFCC00;
+	border: 0;
+	color: white;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 600;
+	border-radius: 3px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+a.btn:link, a.btn:visited, a.btn:hover{
+	color: white;
+	text-decoration: none;
+	border: none;
+}
+
+.btn:hover {
+	background: #CC9900;
+}
+
+#header {
+	padding: 60px 20px 80px;
+}
+
+#header p {
+	margin-bottom: 20px;
+}
+
+#footer {
+	font-size: 14px;
+	padding-top: 60px;
+	padding-bottom: 20px;
+}
+
+/*--Media Query--*/
+@media (max-width: 757px) {
+	h1 {
+	 font-size: 3.5em;
+	}
+	#header {
+		padding: 20px 20px 40px;
+	}
+	.panel-heading {
+		padding: 20px 15px;
+	}
+}
+
+@media (max-width: 374px) {
+	h1 {
+		font-size: 3em;
+	}
+}
